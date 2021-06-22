@@ -1,8 +1,13 @@
 .app-wrap {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 50px;
+  font-weight: 300;
+  z-index: 2000;
+  overflow: auto;
 }
 .form-class {
   margin: 30px;
@@ -18,13 +23,28 @@
   border-radius: 16px 0px 16px 0px;
   border-bottom: 3px solid #df8e00;
   border-top: 3px solid #df8e00;
-  color: #313131;
-  font-size: 15px;
+  color: red;
+  font-size: 20px;
   font-weight: 100;
   /*transition: 0.2s ease-out;*/
 }
 
 body {
-  font-family: montserrat, sans-serif;
-  background-color: rgb(131, 37, 103);
+  font-family: Comic Sans MS;
+  font-size: 24px;
+  background-color: #225470;
+  opacity: 0.35;
+  color: red;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }

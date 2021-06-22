@@ -21,30 +21,86 @@ function getResults(query){
 		//response
 		//const response1 = response.json()
 	}).then(displayResults)
+
 	
 
-}
+} 
+
+function getResults(query){
+    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=1438218c&app_key=2c8bc51eee49de5e7e65c698d382a71d%09&ingr=${query}&nutrition-type=cooking`)
+    .then(response => {
+      if (response.ok){
+      return response.json()}
+      else if (response.status === 404){
+        return Promise.reject('error 404')
+
+      }
+      
+    }).then(displayResults)
+    
+    
+  }
 
 function displayResults(response){
-	//console.log(response1.hints[0].food.nutrients.ENERC_KCAL)
+
+	/*let calories = document.getElementById('calories')
+	let caloriesValue = response.hints[0].food.nutrients.ENERC_KCAL
+	let carbs = document.getElementById('carbs')
+	let carbsValue = response.hints[0].food.nutrients.CHOCDF
+	let protein = document.getElementById('proteins')
+	let proteinValue = response.hints[0].food.nutrients.PROCNT
+	let fat = document.getElementById('fat')
+	let fatValue= response.hints[0].food.nutrients.FAT */
+
+	if (response.hints.length === 0 ) {
+
+	/*let calories = document.getElementById('calories')
+	let caloriesValue = response.hints[0].food.nutrients.ENERC_KCAL
+	let carbs = document.getElementById('carbs')
+	let carbsValue = response.hints[0].food.nutrients.CHOCDF
+	let protein = document.getElementById('proteins')
+	let proteinValue = response.hints[0].food.nutrients.PROCNT
+	let fat = document.getElementById('fat')
+	let fatValue= response.hints[0].food.nutrients.FAT*/
+
+		caloriesValue = 'FOOD ITEM NOT FOUND'
+		calories.value = caloriesValue
+		carbsValue    = 'FOOD ITEM NOT FOUND'
+		carbs.value = carbsValue
+		proteinValue = 'FOOD ITEM NOT FOUND'
+		proteins.value = proteinValue
+		fatValue       = 'FOOD ITEM NOT FOUND'
+		fat.value = fatValue
+
+		setTimeout(clearMessage, 3000)
+
+		console.log(caloriesValue)
+	}
+	else{
 	let calories = document.getElementById('calories')
 	let caloriesValue = response.hints[0].food.nutrients.ENERC_KCAL
+	let carbs = document.getElementById('carbs')
+	let carbsValue = response.hints[0].food.nutrients.CHOCDF
+	let protein = document.getElementById('proteins')
+	let proteinValue = response.hints[0].food.nutrients.PROCNT
+	let fat = document.getElementById('fat')
+	let fatValue= response.hints[0].food.nutrients.FAT
+
+	console.log(response)
+	
 	//console.log(caloriesValue)
-	calories.value = caloriesValue
+	calories.value = caloriesValue.toFixed(2)
 	
 	//console.log(calories.value)
 
-	let carbs = document.getElementById('carbs')
-	let carbsValue = response.hints[0].food.nutrients.CHOCDF
-	carbs.value = carbsValue
-	let protein = document.getElementById('proteins')
-	let proteinValue = response.hints[0].food.nutrients.PROCNT
-	protein.value = proteinValue
-
-	let fat = document.getElementById('fat')
-	let fatValue= response.hints[0].food.nutrients.FAT
-	fat.value = fatValue
 	
+	carbs.value = carbsValue.toFixed(2)
+	
+	protein.value = proteinValue.toFixed(2)
+
+	
+	fat.value = fatValue.toFixed(2)
+	}
 
 
 
@@ -66,3 +122,17 @@ function displayResults(response){
   }
 
 console.log(getInfo())*/
+
+function clearMessage(){
+	let calories = document.getElementById('calories')
+	let carbs = document.getElementById('carbs')
+	let protein = document.getElementById('proteins')
+	let fat = document.getElementById('fat')
+	//
+	calories.value = ''
+	carbs.value = ''
+	protein.value = ''
+	fat.value = ''
+
+
+}
