@@ -8,16 +8,17 @@
   font-weight: 300;
   z-index: 2000;
   overflow: hidden;
+  margin-top: 5px;
 }
 .form-class {
   margin: 30px;
-  background-color: purple;
+  background-color: black;
   border: none;
   outline: none;
   /*background-color:rgba(255, 255, 255, 0.3);*/
   border-radius: 16px 0px 16px 0px;
-  border-bottom: 3px solid purple;
-  border-top: 3px solid purple;
+  border-top: #225470;
+  border-bottom: #225470;
 }
 
 .form-class input {
@@ -28,9 +29,10 @@
   outline: none;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px 0px 16px 0px;
-  border-bottom: 3px solid #df8e00;
-  border-top: 3px solid #df8e00;
+  border-top: #225470;
+  border-bottom: #225470;
   color: red;
+  color: white;
   font-size: 20px;
   font-weight: 100;
   /*transition: 0.2s ease-out;*/
@@ -40,8 +42,11 @@ body {
   font-family: Comic Sans MS;
   font-size: 24px;
   background-color: #225470;
+
   opacity: 0.35;
+  opacity: 0.8;
   color: red;
+  color: white;
   /*overflow: hidden;*/
 }
 

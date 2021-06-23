@@ -7,19 +7,18 @@ function setQuery(evt){
 	}
 }
 
-/*const application = {
+const application = {
 	application_key : 
 	'2c8bc51eee49de5e7e65c698d382a71d',
 	application_id: '1438218c',
-	query: 'sugar'
-}*/
+	
+}
 
 function getResults(query){
-	fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=1438218c&app_key=2c8bc51eee49de5e7e65c698d382a71d%09&ingr=${query}&nutrition-type=cooking`)
+	fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=${application.application_id}&app_key=${application.application_key}09&ingr=${query}/*&nutrition-type=cooking*/`)
 	.then(response => {
-		return response.json()
-		//response
-		//const response1 = response.json()
+		return response.json().
+		catch(err => alert(err))
 	}).then(displayResults)
 
 	
