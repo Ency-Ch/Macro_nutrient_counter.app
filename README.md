@@ -14,4 +14,8 @@ In the event of the food item entered in the search box being absent from the da
 ## Dependencies 
 
 The API and food database are provided by (https://www.edamam.com/) . API keys and APP Id are needed to build a similar app and can be obtained from their website. 
+The fetch API and its components has
 
+live site (https://ency-ch.github.io/Macro_nutrient_counter.app/)
+
+![image](https://user-images.githubusercontent.com/74440383/125875764-73999c0f-03b2-4841-81d2-40f7c738f361.png)
